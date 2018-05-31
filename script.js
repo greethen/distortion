@@ -15,7 +15,16 @@ async function loadJson() {
         // document.querySelector(".numberInQueue").textContent = `${myJson.inQueue}`;
         document.querySelector(".number").textContent = `${myJson.inQueue}`;
         document.querySelector(".bar").style.width = `${myJson.inQueue}0px`;
-
+        if(myJson.inQueue<8){
+            //console.log("has middle", request.middle)
+            document.querySelector('.funnyComment').textContent=`Hurray, first come first serve. Go get your cold beer!!!`;
+        } else if (myJson.inQueue>17){
+            //console.log("no middle")
+            document.querySelector('.funnyComment').textContent=`No chances, go home!`;
+        }
+        else{
+            document.querySelector('.funnyComment').textContent=`Patience is gold! Try to wait, but no promises...`;
+        }
 
     };
 
